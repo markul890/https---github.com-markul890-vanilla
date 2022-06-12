@@ -5,6 +5,12 @@
 }
 body {
   font-family: "Lora", serif;
+  background: linear-gradient(
+    93.1deg,
+    rgb(238, 254, 183) 19.1%,
+    rgb(169, 254, 222) 53.9%,
+    rgb(90, 222, 255) 92%
+  );
 }
 .container {
   height: 100vh;
@@ -13,14 +19,6 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-
-  background: linear-gradient(
-    93.1deg,
-    rgb(238, 254, 183) 19.1%,
-    rgb(169, 254, 222) 53.9%,
-    rgb(90, 222, 255) 92%
-  );
-  size: 100%;
 }
 
 .weather {
