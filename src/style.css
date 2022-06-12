@@ -11,6 +11,7 @@ body {
     rgb(169, 254, 222) 53.9%,
     rgb(90, 222, 255) 92%
   );
+  background-size: cover;
 }
 .container {
   height: 100vh;
