@@ -27,13 +27,11 @@
     
     <div class="container">
        <div class="container">
-         <h1>
-           <a href="https://github.com/markul890/weather-app"></a>
-             </h1>
+         
       <div class="weather-app">
         <form class="search-form" id="search-form">
           <div class="row">
-            <div class="col-5">
+            <div class="col-6">
               <input
                 type="search"
                 placeholder="Type a city.."
@@ -43,19 +41,24 @@
                 class="form-control shadow-sm"
               />
             </div>
-            <div class="col-3">
+            <div class="col-4">
               <input
                 type="submit"
                 value="Search"
                 class="form-control btn btn-primary shadow-sm"
               />
             </div>
-      <img src="" alt="" srcset="" id="weather-icon" />
-      <div id="city">Kyiv</div>
+          </div>
+        </form>
+     
+      <div class="cit">
+       <h1 id="city">Kyiv</h1>   
+      </div>
+      
       
       <div class="date" id="date"></div>
       <div class="weather">
-        <div><span id="temp"></span>℃</div>
+        <div><span id="temp">26</span>℃</div>
         
         
       </div>
@@ -63,6 +66,14 @@
         <h4>Wind: <span id="wind"></span>km/h</h4>
         <h4>Humidity: <span id="hum"></span>%</h4>
       </div>
+         <small>
+          <a
+            href="https://github.com/markul890/vanilla-/blob/master/src/app.js"
+            target="_blank"
+            >Open-source code</a
+          >
+          by Marharyta Kulinenko
+        </small>
     </div>
     <script src="src/app.js"></script>
   </body>
