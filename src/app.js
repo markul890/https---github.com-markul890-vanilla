@@ -17,6 +17,7 @@ let currentMinutes = currentTime.getMinutes();
 weatherDate.innerHTML = `${currentDay} ${currentHour}:${currentMinutes}`;
 
 ///////////////////////////////////////////////////////////////////
+
 function displayWeather(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temp").innerHTML = Math.round(
@@ -24,7 +25,14 @@ function displayWeather(response) {
   );
   document.querySelector("#hum").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = response.data.wind.speed;
-  document.querySelector("#descr").innerHTML = response.data.weather[0].main;
+  document.querySelector("#descr").innerHTML =
+    response.data.weather[0].description;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function searchCity(city) {

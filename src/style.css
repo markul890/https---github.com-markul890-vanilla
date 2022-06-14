@@ -22,11 +22,12 @@ body {
   flex-direction: column;
 }
 
-.weather {
+.cleafix-weather {
   display: flex;
   align-items: center;
   margin: 15px 0;
-  font-size: 3.5rem;
+  font-size: 5rem;
+  font-weight: 500;
 }
 
 .cit {
