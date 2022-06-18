@@ -18,36 +18,12 @@ weatherDate.innerHTML = `${currentDay} ${currentHour}:${currentMinutes}`;
 
 ///////////////////////////////////////////////////////////////////
 
-function celsiusToFahrenheit(celsius) {
-  let temperNow = document.querySelector("#temp");
-  let fahrenheit = (celsius * 9) / 5 + 32;
-  temperNow.innerHTML = Math.round(fahrenheit);
-  console.log(fahrenheit);
-  return fahrenheit;
-}
-function changeUnitsCtoF(event) {
-  event.preventDefault();
-  let temperCurrent = document.querySelector("#temp").innerHTML;
-  console.log(temperCurrent);
-  let temperNowInF = celsiusToFahrenheit(temperCurrent);
-  console.log(temperNowInF);
-  return temperCurrent;
-}
-function changeUnitsFtoC(event) {
-  event.preventDefault();
-  let inputCityName = document.querySelector("#city").innerHTML;
-  console.log(inputCityName);
-  let apiKey = "aa1fb6b2823abb39ce4e3a2dd989bdf";
-  let apiUrlCurrentCity = `https://api.openweathermap.org/data/2.5/weather?q=${inputCityName}&appid=${apiKey}&&units=metric`;
-  axios.get(apiUrlCurrentCity).then(currentTemp);
-  return temperNow;
-}
-
 function displayWeather(response) {
   document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#temp").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  celsiusTemperature = response.data.main.temp;
+  let temperatureElement = document.querySelector("#temp");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+
   document.querySelector("#hum").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = response.data.wind.speed;
   document.querySelector("#descr").innerHTML =
@@ -73,10 +49,29 @@ function submit(event) {
 }
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", submit);
+////////////////////////////////////////////////
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temp");
 
-let temperNow = document.querySelector("#temp").innerText;
-let temperCel = document.querySelector("#temp").innerText;
-let unitCel = document.querySelector("#celsius");
-let unitFahr = document.querySelector("#fahrenheit");
-unitFahr.addEventListener("click", changeUnitsCtoF);
-unitCel.addEventListener("click", changeUnitsFtoC);
+  celsiusLink.classList.remove("units");
+  fahrenheitLink.classList.add("units");
+  let fahrenheiTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheiTemperature);
+}
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("units");
+  fahrenheitLink.classList.remove("units");
+  let temperatureElement = document.querySelector("#temp");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+let celsiusTemperature = null;
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+searchCity("Kyiv");
