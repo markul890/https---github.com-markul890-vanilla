@@ -30,6 +30,13 @@ body {
   font-weight: 500;
 }
 
+.units {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  position: relative;
+  top: -40px;
+  font-size: 20px;
+}
+
 .cit {
   text-align: center;
   margin: auto;
