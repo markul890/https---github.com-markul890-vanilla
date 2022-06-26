@@ -23,17 +23,22 @@ body {
 }
 
 .cleafix-weather {
-  display: flex;
-  align-items: center;
-  margin: 15px 0;
+  display: inline-block;
+
+  align-items: left;
+  margin-left: 200px;
+  margin-right: 200px;
   font-size: 5rem;
-  font-weight: 500;
+  font-weight: 50;
+  justify-content: left;
+  width: 50px;
 }
 
 .units {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  position: relative;
-  top: -40px;
+
+  top: -5px;
+
   font-size: 20px;
 }
 
@@ -47,25 +52,50 @@ body {
   font-style: italic;
   text-align: center;
 }
-.desc {
-  font-size: 1.25rem;
-  text-transform: capitalize;
+.date {
+  font-size: 20px;
+  text-align: center;
+  color: rgb(22, 110, 106);
 }
-.circle {
-  background-color: black;
-  border-radius: 50px;
-  height: 15px;
-  width: 15px;
-  margin: 0 15px;
+.info {
+  font-size: 10px;
+  text-align: center;
+  color: rgb(22, 110, 106);
 }
+
 .weather-app {
-  border: 1px solid rgb(11, 128, 136);
   padding: 25px;
   margin: 20px auto;
-  border-radius: 10px;
-  max-width: 900px;
+  border-radius: 5px;
+  max-width: 1000px;
+  border: 1px solid rgb(11, 128, 136);
+  background-color: transparent;
 }
 .search-form {
   margin-bottom: 30px;
   text-align: center;
+}
+
+.person {
+  text-align: center;
+}
+.forecast {
+  text-align: center;
+  color: red;
+  margin-top: 20px;
+  font-size: 20px;
+}
+.weather-forecast-date {
+  font-size: 16px;
+  opacity: 0.5;
+  position: relative;
+  color: blue;
+}
+
+.weather-forecast-temperature-min {
+  opacity: 0.5;
+}
+
+.weather-forecast-temperatures {
+  font-size: 13px;
 }
